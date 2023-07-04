@@ -1,0 +1,20 @@
+// Given five positive integers, find the minimum and maximum values that can be calculated by summing exactly four of the five integers. Then print the respective minimum and maximum values as a single line of two space-separated long integers.
+
+function miniMaxSum(arr) {
+    // Write your code here
+    var newArr= arr.sort();
+    var sum = 0;
+    for (let i= 0; i< newArr.length; i++) {
+        sum += newArr[i];
+    }
+    var max = sum - newArr[0]
+    var min = sum -newArr[newArr.length-1]
+    console.log(min , max);
+
+}
+
+    // python solution
+    // def miniMaxSum(arr):
+    // // # Write your code here
+    // x = sorted(arr)
+    // print(sum(x[:-1]),sum(x[1:]))

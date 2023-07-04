@@ -1,0 +1,13 @@
+# This is a staircase of size n = 4
+#     #
+#    ##
+#   ###
+#  ####
+
+def staircase(n):
+    # Write your code here
+    for i in range(n):
+        # dealing with spaces
+        print (" " *(n-i-1), end="")
+        # starts from 0
+        print ("#" *(i+1))

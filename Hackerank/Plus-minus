@@ -1,0 +1,40 @@
+# Given an array of integers, calculate the ratios of its elements that are positive, negative, and zero. Print the decimal value of each fraction on a new line with 6 places after the decimal.
+
+def plusMinus(arr):
+    # Write your code here: python
+    positive = 0
+    negative = 0
+    zero = 0
+    for num in arr:
+        if num > 0:
+            positive +=1
+        elif num < 0:
+            negative +=1
+        else:
+            zero += 1
+    print(positive/len(arr))
+    print(negative/len(arr))
+    print(zero/len(arr))
+
+    # javascript solution
+# function plusMinus(arr) {
+#     # // Write your code here
+#     let pos = 0
+#     let neg = 0
+#     let zero = 0
+#     for (let num of arr){
+#         // console.log("this is num:",num)
+#         if (num >0) {
+#             pos += 1
+#         } else if (num < 0) {
+#             neg += 1
+#         } else {
+#             zero += 1
+#         }
+#     }
+#     console.log(pos/arr.length)
+#     console.log(neg/arr.length)
+#     console.log(zero/arr.length)
+
+
+# }
