@@ -1,0 +1,12 @@
+def funWithAnagrams(text):
+    i = 0
+    while i < len(text):
+        j = len(text) -1
+        while j > i:
+            sortedA = ''.join(sorted(text[i]))
+            sortedB = ''.join(sorted(text[j]))
+            if sortedA == sortedB:
+                text.pop(j)
+            j -= 1
+            i += 1
+    return sorted(text)
