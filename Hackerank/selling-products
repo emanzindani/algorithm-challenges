@@ -1,0 +1,25 @@
+# A salesperson must sell n items in a bag with random IDs. The
+# salesperson can remove as many as m items trom the bag. Determine
+# the minimum number of different IDs the final bag can contain afte
+# performing, at most, m deletions
+# Example
+# n=6
+# ids = [1,1,1,2,3,2]
+# m=2
+
+def deleteProducts(ids, m):
+    id_counts = {}
+    for id in ids:
+        if id in id_counts:
+            id_counts[id] +=1
+        else:
+            id_counts[id] = 1
+    uni_ids = len(id_counts)
+    sort_counts = sorted(id_counts.values())
+    for count in sort_counts:
+        if m >= count:
+            uni_ids -= 1
+            m -= count
+        else:
+            break
+    return uni_ids
