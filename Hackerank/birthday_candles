@@ -1,0 +1,21 @@
+# You are in charge of the cake for a child's birthday. You have decided the cake will have one candle for each year of their total age. They will only be able to blow out the tallest of the candles. Count how many candles are tallest.
+
+# Example
+# candles = [4,4,1,3]
+# output = 2
+def birthdayCakeCandles(candles):
+    # sort = sorted(candles)
+    # tallest = sort[-1]
+    # # print("this is tallest", tallest)
+    # return candles.count(tallest)
+    # # print("this is candle", candles)
+
+    count = 0
+    tallest = 0
+    for i in range(len(candles)):
+        if candles[i] > tallest:
+            tallest = candles[i]
+            count = 1
+        elif candles[i] == tallest:
+            count +=1
+    return count
