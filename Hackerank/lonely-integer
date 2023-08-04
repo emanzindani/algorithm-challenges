@@ -1,0 +1,9 @@
+# Given an array of integers, where all elements but one occur twice, find the unique element.
+# Example
+# a=[1,2,3,4,3,2,1]
+
+def lonelyinteger(a):
+    # Write your code here
+    for num in a:
+        if a.count(num) <= 1:
+            return num
