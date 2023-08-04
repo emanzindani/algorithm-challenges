@@ -2,8 +2,18 @@
 # Example
 # a=[1,2,3,4,3,2,1]
 
+# def lonelyinteger(a):
+#     # Write your code here
+#     for num in a:
+#         if a.count(num) <= 1:
+#             return num
+
 def lonelyinteger(a):
-    # Write your code here
+    # same input = 0
+    # diff input = 1
+    # 1 ^ 0 = 1
+    # 1 ^ 1 = 0
+    result = 0
     for num in a:
-        if a.count(num) <= 1:
-            return num
+        result ^= num
+    return result
