@@ -1,0 +1,18 @@
+import React from 'react';
+
+const data = [
+    {name: 'Daniel', age: 25 },
+    {name: 'John', age: 24},
+    {name: 'Jen', age: 31},
+];
+
+function DataList(props) {
+    return (
+        <ul>
+            {props.data.map((item, index) =>
+                <li key={index}>
+                    <span>{item.name} {item.age}</span>
+                </li>
+            )}
+    );
+}
