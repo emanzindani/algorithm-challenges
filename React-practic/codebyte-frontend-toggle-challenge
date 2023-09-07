@@ -1,0 +1,18 @@
+<!-- Your goal is to modify the componenet so that you can properly toggle the button to switch between an on state and an off state. When the button is on and it is clicked, it turns off, and the text within it changes from on to off, and vice versa.  -->
+
+import React, { useState } from 'react;
+
+function Toggle() {
+    const [isOn, setIsOn] = useState(false);
+
+    function handleClick() {
+        <!-- # prevState works with current value -->
+        setIsOn(prevState => !prevstate);
+    }
+    return (
+        <button onClick={handleClick}>
+            {isOn ? 'OFF' : 'ON'}
+        </button>
+    );
+
+}

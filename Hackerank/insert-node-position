@@ -1,0 +1,28 @@
+# Given the pointer to the head node of a linked list and an integer to insert at a certain position, create a new node with the given integer as its  attribute, insert this node at the desired position and return the head node.
+
+# A position of 0 indicates head, a position of 1 indicates one node away from the head and so on. The head pointer given may be null meaning that the initial list is empty.
+
+
+def insertNodeAtPosition(head, data, position):
+    # Write your code here
+    # create a new node
+    node = SinglyLinkedListNode(data)
+    # head pointer is Null
+    if head == None:
+        head = node
+    else:
+        temp = head
+        # skip the node to reach position
+        count = 1
+        while temp != None and count < position:
+            temp = temp.next
+            count += 1
+
+        # insert the node
+        # 4 points to 3
+        node.next = temp.next
+        # 2 points to 4, we have to do it in this order so 3 dosen't get lost
+        temp.next = node
+
+
+    return head
