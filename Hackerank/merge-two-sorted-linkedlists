@@ -1,21 +1,39 @@
 # Given pointers to the heads of two sorted linked lists, merge them into a single, sorted linked list. Either head pointer may be null meaning that the corresponding list is empty.
 
 def mergeLists(head1, head2):
-    head3 = SinglyLinkedListNode(-1)
-    node = head3
+    # head3 = SinglyLinkedListNode(-1)
+    # node = head3
 
-    while head1 and head2:
+    # while head1 and head2:
 
-        if head1.data < head2.data:
-            node.next = head1head1 = head1.next
-        else:
-            node.next = head2
-            head2 = head2.next
-        node = node.next
-     # if something remains
-    if head1:
-        node.next = head1
-    if head2:
-        node.next = head2
-    # returning head3.next so -1 is not included
-    return head3.next
+    #     if head1.data < head2.data:
+    #         node.next = head1head1 = head1.next
+    #     else:
+    #         node.next = head2
+    #         head2 = head2.next
+    #     node = node.next
+    #  # if something remains
+    # if head1:
+    #     node.next = head1
+    # if head2:
+    #     node.next = head2
+    # # returning head3.next so -1 is not included
+    # return head3.next
+
+    # both lists are Null
+    if head1 == None and head2 == None:
+        return None
+    # only one list is Null
+    if head1 == None:
+        return head2
+    if head2 == None:
+        return head1
+
+    # compare both list
+    if head1.data < head2.data:
+        temp = head1
+        temp.next = mergeLists(head1.next, head2)
+    else:
+        temp = head2
+        temp.next = mergeLists(head1, head2.next)
+    return temp
