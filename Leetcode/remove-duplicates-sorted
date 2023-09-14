@@ -1,0 +1,11 @@
+#Python solution:
+class Solution:
+    def removeDuplicates(self, nums: List[int]) -> int:
+        # left pointer to start at one because first element is always unique
+        left = 1
+        # i iterates through the nums, starting from index 1 element two so we can compare to one before
+        for i in range(1,len(nums)):
+            if nums[i] != nums[i-1]:
+                nums[left] = nums[i]
+                left += 1
+        return left
