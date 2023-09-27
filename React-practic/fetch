@@ -31,3 +31,19 @@ function ApiData() {
 }
 
 export default ApiData;
+
+// render api data as UI compoenents
+
+return (
+    <div>
+      <h1>API Data</h1>
+      <ul>
+        {apiData.map((item, index) => (
+          <li key={index}>
+            <p>Name: {item.name}</p>
+            <img src={item.picture} alt={`Picture of ${item.name}`} />
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
