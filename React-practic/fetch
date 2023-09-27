@@ -1,0 +1,33 @@
+import React, { useState, useEffect } from 'react';
+
+function ApiData() {
+  // Step 1: Define state to store the API data
+  const [apiData, setApiData] = useState(null);
+
+  // Step 2: Create an effect to fetch data when the component mounts
+  useEffect(() => {
+    // Define the API URL you want to fetch data from
+    const apiUrl = 'https://api.example.com/data'; // Replace with your API URL
+
+    // Fetch data from the API using the fetch() function
+    fetch(apiUrl)
+      .then((response) => response.json())
+      .then((data) => {
+        // Step 3: Update the state with the fetched data
+        setApiData(data);
+      })
+      .catch((error) => {
+        console.error('Error fetching data:', error);
+      });
+  }, []); // The empty array [] means this effect runs only once, when the component mounts
+
+  // Step 4: Render the API data as a string
+  return (
+    <div>
+      <h1>API Data</h1>
+      <p>{apiData ? JSON.stringify(apiData) : 'Loading...'}</p>
+    </div>
+  );
+}
+
+export default ApiData;
